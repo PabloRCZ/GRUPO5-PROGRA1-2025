@@ -9,16 +9,27 @@ package gt.edu.miumg.proyectozoologico;
  * @author pabli
  */
 public abstract class Animal {
+    private int idAnimal; // NUEVO CAMPO
     private String nombre;
     private int edad;
     private double peso;
     private double alimentoDiario;
 
-    public Animal(String nombre, int edad, double peso, double alimentoDiario) {
+    public Animal(int idAnimal, String nombre, int edad, double peso, double alimentoDiario) {
+        this.idAnimal = idAnimal;
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
         this.alimentoDiario = alimentoDiario;
+    }
+
+    // Getter y Setter para idAnimal
+    public int getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
     }
 
     // Método abstracto que implementarán las subclases

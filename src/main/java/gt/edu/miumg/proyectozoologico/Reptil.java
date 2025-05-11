@@ -11,8 +11,8 @@ package gt.edu.miumg.proyectozoologico;
 public class Reptil extends Animal {
     private boolean venenoso;
 
-    public Reptil(String nombre, int edad, double peso, double alimentoDiario, boolean venenoso) {
-        super(nombre, edad, peso, alimentoDiario);
+    public Reptil(int idAnimal, String nombre, int edad, double peso, double alimentoDiario, boolean venenoso) {
+        super(idAnimal, nombre, edad, peso, alimentoDiario);
         this.venenoso = venenoso;
     }
 

@@ -12,8 +12,8 @@ package gt.edu.miumg.proyectozoologico;
 public class Mamifero extends Animal {
     private String habitat;
 
-    public Mamifero(String nombre, int edad, double peso, double alimentoDiario, String habitat) {
-        super(nombre, edad, peso, alimentoDiario);
+    public Mamifero(int idAnimal, String nombre, int edad, double peso, double alimentoDiario, String habitat) {
+        super(idAnimal, nombre, edad, peso, alimentoDiario);
         this.habitat = habitat;
     }
 

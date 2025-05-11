@@ -11,8 +11,8 @@ package gt.edu.miumg.proyectozoologico;
 public class Ave extends Animal {
     private boolean vuela;
 
-    public Ave(String nombre, int edad, double peso, double alimentoDiario, boolean vuela) {
-        super(nombre, edad, peso, alimentoDiario);
+    public Ave(int idAnimal, String nombre, int edad, double peso, double alimentoDiario, boolean vuela) {
+        super(idAnimal, nombre, edad, peso, alimentoDiario);
         this.vuela = vuela;
     }
 
