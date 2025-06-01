@@ -4,6 +4,10 @@
 
 package gt.edu.miumg.proyectozoologico;
 
+// Importar la clase MenuPrincipal
+import gt.edu.miumg.BD.MenuPrincipal;
+import static gt.edu.miumg.BD.MenuPrincipal.mostrarMenuAnimales;
+
 /**
  *
  * @author pabli
@@ -26,8 +30,8 @@ public class Proyectozoologico {
             try {
                 System.out.println("\n===== SISTEMA DE GESTION ZOOLOGICO LA AURORA =====");
                 System.out.println("1. Zoo");
-                System.out.println("2. Fase II - Arreglos");
-                System.out.println("3. Fase III");
+                System.out.println("2. Arreglos");
+                System.out.println("3. Gestion con Base de Datos");
                 System.out.println("4. Salir");
                 System.out.print("Seleccione una opcion: ");
                 
@@ -41,7 +45,9 @@ public class Proyectozoologico {
                         menuFase2(scanner);
                         break;
                     case 3:
-                        System.out.println("Funcionalidad Fase III no implementada aun.");
+                        // Llamar al menú principal de la Fase III (JPA)
+                        System.out.println("\n===== ACCEDIENDO A FASE III - BASE DE DATOS =====");
+                        mostrarMenuAnimales();
                         break;
                     case 4:
                         salir = true;
@@ -142,7 +148,7 @@ public class Proyectozoologico {
         
         while (!volver) {
             System.out.println("\n===== FASE II - ARREGLOS =====");
-            System.out.println("a: Agregar Mamífero");
+            System.out.println("a: Agregar Mamifero");
             System.out.println("b: Agregar Ave");
             System.out.println("c: Agregar Reptil");
             System.out.println("d: Ordenar Arreglo");
@@ -192,7 +198,7 @@ public class Proyectozoologico {
             System.out.print("Nombre del mamifero: ");
             String nombre = scanner.nextLine();
             
-            System.out.print("Edad (anos): ");
+            System.out.print("Edad : ");
             int edad = Integer.parseInt(scanner.nextLine());
             
             System.out.print("Peso (kg): ");
@@ -224,7 +230,7 @@ public class Proyectozoologico {
     private static void agregarAve(Scanner scanner) {
         // Verificar si el array está lleno
         if (contadorAnimales >= animales.length) {
-            System.out.println("El array ya está lleno");
+            System.out.println("El array ya esta lleno");
             return;
         }
         
@@ -236,7 +242,7 @@ public class Proyectozoologico {
             System.out.print("Nombre del ave: ");
             String nombre = scanner.nextLine();
             
-            System.out.print("Edad (anos): ");
+            System.out.print("Edad : ");
             int edad = Integer.parseInt(scanner.nextLine());
             
             System.out.print("Peso (kg): ");
@@ -268,7 +274,7 @@ public class Proyectozoologico {
     private static void agregarReptil(Scanner scanner) {
         // Verificar si el array está lleno
         if (contadorAnimales >= animales.length) {
-            System.out.println("El array ya está lleno");
+            System.out.println("El array ya esta lleno");
             return;
         }
         
@@ -280,7 +286,7 @@ public class Proyectozoologico {
             System.out.print("Nombre del reptil: ");
             String nombre = scanner.nextLine();
             
-            System.out.print("Edad (anos): ");
+            System.out.print("Edad : ");
             int edad = Integer.parseInt(scanner.nextLine());
             
             System.out.print("Peso (kg): ");
@@ -421,7 +427,7 @@ public class Proyectozoologico {
             System.out.print("Nombre del animal: ");
             String nombre = scanner.nextLine();
             
-            System.out.print("Edad (anos): ");
+            System.out.print("Edad : ");
             int edad = Integer.parseInt(scanner.nextLine());
             
             System.out.print("Peso (kg): ");
@@ -508,4 +514,6 @@ public class Proyectozoologico {
             System.out.println("Error al exportar los datos: " + e.getMessage());
         }
     }
+
+    
 }

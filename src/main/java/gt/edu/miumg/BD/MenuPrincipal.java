@@ -58,18 +58,18 @@ public class MenuPrincipal {
     public static void mostrarMenuAnimales() {
         char opcion;
         do {
-            System.out.println("\n=== FASE 3: GESTIÓN DE ANIMALES ===");
-            System.out.println("a: Trabajar con Mamífero");
+            System.out.println("\n=== FASE 3: GESTION DE ANIMALES ===");
+            System.out.println("a: Trabajar con Mamifero");
             System.out.println("b: Trabajar con Ave");
             System.out.println("c: Trabajar con Reptil");
-            System.out.println("d: Regresar al menú principal");
-            System.out.print("Seleccione una opción: ");
+            System.out.println("d: Regresar al menu principal");
+            System.out.print("Seleccione una opcion: ");
             
             opcion = scanner.nextLine().toLowerCase().charAt(0);
             
             switch (opcion) {
                 case 'a':
-                    mostrarMenuCRUD("Mamífero");
+                    mostrarMenuCRUD("Mamifero");
                     break;
                 case 'b':
                     mostrarMenuCRUD("Ave");
@@ -78,10 +78,10 @@ public class MenuPrincipal {
                     mostrarMenuCRUD("Reptil");
                     break;
                 case 'd':
-                    System.out.println("Regresando al menú principal...");
+                    System.out.println("Regresando al menu principal...");
                     break;
                 default:
-                    System.out.println("Opción inválida. Intente de nuevo.");
+                    System.out.println("Opcion invalida. Intente de nuevo.");
             }
         } while (opcion != 'd');
     }
@@ -89,13 +89,13 @@ public class MenuPrincipal {
     public static void mostrarMenuCRUD(String tipoAnimal) {
         char opcion;
         do {
-            System.out.println("\n=== GESTIÓN DE " + tipoAnimal.toUpperCase() + " ===");
+            System.out.println("\n=== GESTION DE " + tipoAnimal.toUpperCase() + " ===");
             System.out.println("C: Insertar");
             System.out.println("R: Consultar");
             System.out.println("U: Actualizar");
             System.out.println("D: Eliminar");
-            System.out.println("V: Volver al menú de animales");
-            System.out.print("Seleccione una opción: ");
+            System.out.println("V: Volver al menu de animales");
+            System.out.print("Seleccione una opcion: ");
             
             opcion = scanner.nextLine().toLowerCase().charAt(0);
             
@@ -113,10 +113,10 @@ public class MenuPrincipal {
                     eliminarAnimal(tipoAnimal);
                     break;
                 case 'v':
-                    System.out.println("Regresando al menú de animales...");
+                    System.out.println("Regresando al menu de animales...");
                     break;
                 default:
-                    System.out.println("Opción inválida. Intente de nuevo.");
+                    System.out.println("Opción invalida. Intente de nuevo.");
             }
         } while (opcion != 'v');
     }
@@ -136,11 +136,11 @@ public class MenuPrincipal {
             System.out.print("Ingrese la especie: ");
             String especie = scanner.nextLine();
             
-            System.out.print("Ingrese el hábitat: ");
+            System.out.print("Ingrese el habitat: ");
             String habitat = scanner.nextLine();
             
             switch (tipoAnimal) {
-                case "Mamífero":
+                case "Mamifero":
                     System.out.print("Ingrese el tipo de pelo: ");
                     String tipoPelo = scanner.nextLine();
                     Mamifero mamifero = new Mamifero(id, nombre, especie, habitat, tipoPelo);
@@ -177,12 +177,12 @@ public class MenuPrincipal {
             System.out.println("\n=== CONSULTAR " + tipoAnimal.toUpperCase() + "S ===");
             
             switch (tipoAnimal) {
-                case "Mamífero":
+                case "Mamifero":
                     List<Mamifero> mamiferos = mamiferoController.findMamiferoEntities();
                     if (mamiferos.isEmpty()) {
-                        System.out.println("No hay mamíferos registrados.");
+                        System.out.println("No hay mamiferos registrados.");
                     } else {
-                        System.out.println("Lista de Mamíferos:");
+                        System.out.println("Lista de Mamiferos:");
                         for (Mamifero m : mamiferos) {
                             System.out.println(m.toString());
                         }
@@ -230,7 +230,7 @@ public class MenuPrincipal {
             
             Object animal = null;
             switch (tipoAnimal) {
-                case "Mamífero":
+                case "Mamifero":
                     animal = mamiferoController.findMamifero(id);
                     break;
                 case "Ave":
@@ -255,11 +255,11 @@ public class MenuPrincipal {
             System.out.print("Nueva especie: ");
             String especie = scanner.nextLine();
             
-            System.out.print("Nuevo hábitat: ");
+            System.out.print("Nuevo habitat: ");
             String habitat = scanner.nextLine();
             
             switch (tipoAnimal) {
-                case "Mamífero":
+                case "Mamifero":
                     System.out.print("Nuevo tipo de pelo: ");
                     String tipoPelo = scanner.nextLine();
                     Mamifero mamifero = new Mamifero(id, nombre, especie, habitat, tipoPelo);
@@ -301,7 +301,7 @@ public class MenuPrincipal {
             
             Object animal = null;
             switch (tipoAnimal) {
-                case "Mamífero":
+                case "Mamifero":
                     animal = mamiferoController.findMamifero(id);
                     break;
                 case "Ave":
@@ -320,12 +320,12 @@ public class MenuPrincipal {
             System.out.println("Datos del " + tipoAnimal.toLowerCase() + " a eliminar:");
             System.out.println(animal.toString());
             
-            System.out.print("¿Está seguro de eliminar este registro? (S/N): ");
+            System.out.print("¿Esta seguro de eliminar este registro? (S/N): ");
             String confirmacion = scanner.nextLine().toUpperCase();
             
             if (confirmacion.equals("S") || confirmacion.equals("SI")) {
                 switch (tipoAnimal) {
-                    case "Mamífero":
+                    case "Mamifero":
                         mamiferoController.destroy(id);
                         break;
                     case "Ave":
@@ -337,7 +337,7 @@ public class MenuPrincipal {
                 }
                 System.out.println("✓ " + tipoAnimal + " eliminado exitosamente!");
             } else {
-                System.out.println("Operación cancelada.");
+                System.out.println("Operacion cancelada.");
             }
             
         } catch (NonexistentEntityException e) {
