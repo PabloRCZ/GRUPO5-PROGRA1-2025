@@ -9,7 +9,7 @@ package gt.edu.miumg.proyectozoologico;
  * @author pabli
  */
 public abstract class Animal {
-    private int idAnimal; // NUEVO CAMPO
+    private int idAnimal; // el campo que solicito el ing.
     private String nombre;
     private int edad;
     private double peso;
